@@ -1,0 +1,30 @@
+{
+  "name": "weiqi-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Web Go (weiqi) app — play in the browser or against the Hermes agent via REST API",
+  "scripts": {
+    "dev": "sh scripts/dev.sh",
+    "build": "yarn build:server && yarn build:web",
+    "build:server": "tsc -p tsconfig.json",
+    "build:web": "node scripts/build-web.mjs",
+    "start": "node dist/server.js",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "esbuild": "^0.28.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^3.2.4"
+  }
+}
