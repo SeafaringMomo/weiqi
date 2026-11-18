@@ -10,8 +10,10 @@
     "build:server": "tsc -p tsconfig.json",
     "build:web": "node scripts/build-web.mjs",
     "start": "node dist/server.js",
+    "prestart": "yarn build",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "typecheck:web": "tsc -p tsconfig.web.json --noEmit"
   },
   "engines": {
     "node": ">=20"
